@@ -1,11 +1,33 @@
+import Editor, { OnChange } from '@monaco-editor/react';
+import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 function App() {
-  return (
-    <main>
-      <p className="text-3xl font-bold underline">
-        This is the start of the project markdone
-      </p>
-    </main>
-  )
+	const [editorData, setEditorData] = useState<string>('');
+
+	const handleEditorChange: OnChange = (value, event) => {
+		setEditorData(value as string);
+	};
+
+	return (
+		<>
+			<main>
+				<div className="grid grid-cols-2">
+					<Editor
+						theme="vs-dark"
+						defaultLanguage="markdown"
+						className="min-h-screen"
+						onChange={handleEditorChange}
+					/>
+					<section>
+						<ReactMarkdown className="mx-4 prose dark:prose-invert">
+							{editorData}
+						</ReactMarkdown>
+					</section>
+				</div>
+			</main>
+		</>
+	);
 }
 
-export default App
+export default App;
