@@ -1,8 +1,7 @@
-<script lang="ts">
-    export let output: string;
-    console.log(output);
+<script>
+	export let output = '';
 </script>
 
 <div class="w-1/2 h-screen">
-    {@html output}
+	{@html output}
 </div>
