@@ -42,12 +42,12 @@ jobs:
 
       - run: npm run build:web
 
-      - run: npm run lint
-        if: matrix.platform == 'ubuntu-latest'
+      # - run: npm run lint
+      #   if: matrix.platform == 'ubuntu-latest'
 
-      - run: npm run test
+      # - run: npm run test
 
-      - name: Build
-        uses: tauri-apps/tauri-action@v0
+      # - name: Build
+      #   uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
