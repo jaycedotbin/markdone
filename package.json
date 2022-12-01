@@ -28,7 +28,6 @@
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^3.0.1",
-		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@tauri-apps/cli": "^1.2.1",
